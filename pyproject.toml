@@ -22,6 +22,22 @@ packages = [
 project = "src.primitive_db.main:main"
 
 
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+exclude = ["venv", ".venv", "dist", "__pycache__"]
+
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = []
+
+
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "ruff (>=0.14.6,<0.15.0)"
+]
